@@ -22,14 +22,14 @@ int main()
     //     printf(" %d", ndigit[i]);
     // printf(", white space = %d, other = %d\n", nwhite, nother);
     // Challenge 1
-    int c, i, length = {0};
-    int wordsOne[10] = {0}; // Initialize arrays to zero
+    int c, i, length = 0;
+    int wordsOne[10]; // Initialize arrays to zero
     int wordsTwo[10] = {0}; // Initialize arrays to zero
 
     while ((c = getchar()) != EOF) {
         length++;
-        for (length; length <= length++; ++i) 
-            wordsOne[i] = i + 1;
+        for (i=0; i <= 10; ++i) 
+            wordsOne[i] = i;
             printf("%d ", wordsOne[i]);
             
         
