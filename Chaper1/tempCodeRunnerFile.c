@@ -1,1 +1,2 @@
-        // printf("%d ", wordsOne[i]);
+size =  get_size(current);
+    printf("%d ", size);
