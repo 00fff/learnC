@@ -119,27 +119,57 @@
 //     }
 // }
 // Challenge 2
-#include <stdio.h>
+// #include <stdio.h>
 
-#define MAXLINE 1000  // Define a maximum size for the array
+// #define MAXLINE 1000  // Define a maximum size for the array
 
+// int main() {
+//     int c, count = 0, j;
+//     int i = 0;
+//     char array2[MAXLINE];  // Array to hold input characters
+
+//     // Read characters until EOF
+//     while ((c = getchar()) != EOF) {
+//         if (c == ' ')
+//             continue;
+//         array2[count] = c;
+//         count++;
+//     }
+//     printf("%s", array2);
+        
+
+
+
+//     return 0;
+// }
+//Challenge 3
+void reverse(char line[], int length);
+
+void reverse(char line[], int length) {
+    int i = 0;
+    int temp;
+    int end = length - 1;
+    while (i < end) {
+        temp = line[i];
+        line[i] = line[end];
+        line[end] = temp;
+        i++;
+        end--;
+    }
+    
+    printf("%s ", line);
+}
 int main() {
-    int c, count = 0, i, j;
+    int c;
+    int i = 0;
     char array2[MAXLINE];  // Array to hold input characters
 
     // Read characters until EOF
-    while ((c = getchar()) != EOF) 
-        if (c == '\t')
-            continue;
-        if (count < MAXLINE - 1) {
-            // Ensure we don't exceed array bounds
-            array2[count] = c;   // Store the character in the array
-            count++;
-            printf("%d ", count);
-            putchar('\n');
-        // Print the index and character stored in the arra
-        }  
+    while ((c = getchar()) != EOF) {    
+        array2[i] = c;
+        i++;
+}
+    reverse(array2, i);
 
-
-    return 0;
+return 0;
 }
