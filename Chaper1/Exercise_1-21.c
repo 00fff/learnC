@@ -5,7 +5,7 @@ int main()
     int c, i = 0, space = 0;
     char words[MAXLINE];
     while ((c=getchar()) != EOF) {
-        if (c == ' ') {
+        if (c == ' ' && space <= 4) {
             space++;
         } else {
             while (space > 0) {
