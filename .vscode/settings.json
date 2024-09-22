@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "*.ejs": "html",
-        "learnc1-4": "c"
+        "learnc1-4": "c",
+        "string.h": "c",
+        "cmath": "c",
+        "string": "c"
     }
 }
