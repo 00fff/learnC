@@ -1,44 +1,62 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-// Function prototype for atof
-double my_atof(char s[]);
 
-// Function to convert string to integer
-int atoi(char s[]) {
-    return (int) my_atof(s);
-}
-
-// Function to convert string to double, including scientific notation
-double my_atof(char s[]) {
-    int length = 0, i = 0;
-    int j = 0;
-    int result;
-    char first[100];
-    char last[100];
-
-    length = strlen(s);
-    while (s[i] != 'E' && s[i] != 'e'){
-            first[i] = s[i];
-            i++;
-        }
+// Custom atoi implementation to convert string to integer
+int my_atoi(char s[]) {
+    int num = 0, i = 0;
+    int sign = 1;
+    
+    // Handle negative numbers
+    if (s[0] == '-') {
+        sign = -1;
         i++;
+    }
+    
+    // Iterate over the string to form the integer
     while (s[i] != '\0') {
-    last[j] = s[i];
-    j++;
-    i++;
+        num = num * 10 + (s[i] - '0');
+        i++;
+    }
+    
+    return sign * num;
 }
-    int first_int = atoi(first);
-    int last_int = atoi(last);
-    result = pow(first_int, last_int);
-    printf("%d", result);
-    printf("%s\n%s", first, last);
-    return 0.0; // Placeholder return value
+
+// Custom my_atof function to handle strings in scientific notation
+double my_atof(char s[]) {
+    int i = 0, j = 0;
+    char first[100];  // String for the base part
+    char last[100];   // String for the exponent part
+    
+    // Extract the base part until 'e' or 'E'
+    while (s[i] != 'E' && s[i] != 'e' && s[i] != '\0') {
+        first[i] = s[i];
+        i++;
+    }
+    first[i] = '\0';  // Null-terminate the base string
+
+    // Skip 'e' or 'E'
+    i++;
+    
+    // Extract the exponent part
+    while (s[i] != '\0') {
+        last[j] = s[i];
+        j++;
+        i++;
+    }
+    last[j] = '\0';  // Null-terminate the exponent string
+
+    // Convert the base and exponent to numbers
+    double base = atof(first);    // Convert the base part to double
+    int exponent = my_atoi(last); // Convert the exponent part to integer using custom atoi
+
+    // Perform the scientific notation calculation: base * 10^exponent
+    return base * pow(10, exponent);
 }
 
 int main() {
     char string[20] = "123.45e-6";
-    int result = atoi(string);
-    // printf("%d\n", result); // Output the integer part
+    double result = my_atof(string);  // Convert string to double with scientific notation
+    printf("%lf\n", result);          // Output the result
     return 0;
 }
