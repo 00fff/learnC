@@ -4,6 +4,8 @@
         "learnc1-4": "c",
         "string.h": "c",
         "cmath": "c",
-        "string": "c"
+        "string": "c",
+        "Excercise_5_01.C": "cpp",
+        "ctype.h": "c"
     }
 }
