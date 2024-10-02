@@ -6,6 +6,7 @@
         "cmath": "c",
         "string": "c",
         "Excercise_5_01.C": "cpp",
-        "ctype.h": "c"
+        "ctype.h": "c",
+        "string_view": "c"
     }
 }

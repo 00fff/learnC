@@ -3,15 +3,17 @@
 
 void reverse(char *s) {
     char temp[20];
-    int len = strlen(s); 
-    s += len - 1;
-    int i = 0;
-    while (len--) {
-        temp[i++] = *s--;
-    }
-    temp[i] = '\0';        // Null-terminate the reversed string
-    printf("%s\n", temp);  // Print the reversed string
+    char *p = temp;
+    int len = strlen(s);
     
+    s += len - 1;
+
+    while (len--) {
+        *p++ = *s--;
+    }
+
+    *p = '\0';
+    printf("%s\n", temp);
 }
 
 int main(void) {
